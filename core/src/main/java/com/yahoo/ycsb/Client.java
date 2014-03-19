@@ -620,6 +620,7 @@ public class Client
 
 		System.out.println("YCSB Client 0.1");
 		System.out.print("Command line:");
+		
 		for (int i=0; i<args.length; i++)
 		{
 			System.out.print(" "+args[i]);
