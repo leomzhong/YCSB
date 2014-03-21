@@ -44,6 +44,7 @@ public class ZKSyncPrimitive implements Watcher {
 		private int groupSize;
 		private String barrierRoot;
 		private String myNodeName;
+		private String actualPath;
 
 		ZKBarrier(String address, String root, int size) {
 			super(address);
@@ -77,7 +78,7 @@ public class ZKSyncPrimitive implements Watcher {
 		}
 
 		boolean enter() throws KeeperException, InterruptedException {
-			zk.create(barrierRoot + "/" + myNodeName, new byte[0],
+			this.actualPath = zk.create(barrierRoot + "/" + myNodeName, new byte[0],
 					Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 			while (true) {
 				synchronized (mutex) {
@@ -93,7 +94,7 @@ public class ZKSyncPrimitive implements Watcher {
 		}
 
 		boolean leave() throws KeeperException, InterruptedException {
-			zk.delete(barrierRoot + "/" + myNodeName, 0);
+			zk.delete(this.actualPath, 0);
 			while (true) {
 				synchronized (mutex) {
 					List<String> list = zk.getChildren(barrierRoot, true);
