@@ -1,1 +1,4 @@
 /elasticsearch/target/
+.project
+.settings
+.classpath

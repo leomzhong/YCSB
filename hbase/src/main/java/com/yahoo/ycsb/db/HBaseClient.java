@@ -55,7 +55,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
     //private static final Configuration config = HBaseConfiguration.create();
     private static final Configuration config = HBaseConfiguration.create(); //new HBaseConfiguration();
 
-    public boolean _debug=false;
+    public boolean _debug=true;
 
     public String _table="";
     public HTable _hTable=null;
@@ -106,7 +106,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
                 _hTable.flushCommits();
             }
             long en=System.nanoTime();
-            _measurements.measure("UPDATE", (int)((en-st)/1000));
+            _measurements.measure("UPDATE", (int)((en-st)/1000)); 
         } catch (IOException e) {
             throw new DBException(e);
         }
@@ -297,6 +297,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
         //if this is a "new" table, init HTable object.  Else, use existing one
         if (!_table.equals(table)) {
             _hTable = null;
+			System.out.println("_table != table, table: "+table);
             try
             {
                 getHTable(table);
@@ -326,6 +327,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
         try
         {
             _hTable.put(p);
+			System.out.println("after doing put -----");
         }
         catch (IOException e)
         {
@@ -354,6 +356,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
      */
     public int insert(String table, String key, HashMap<String,ByteIterator> values)
     {
+		System.out.println("-------  insert into table "+table+ " key: "+key);
         return update(table,key,values);
     }
 

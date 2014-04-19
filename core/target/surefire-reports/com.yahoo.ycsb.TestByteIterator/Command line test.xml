@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="Yanans-MacBook-Pro.local" name="com.yahoo.ycsb.TestByteIterator" tests="1" failures="0" timestamp="17 Apr 2014 01:10:10 GMT" time="0.02" errors="0">
+  <testcase name="testRandomByteIterator" time="0.01" classname="com.yahoo.ycsb.TestByteIterator"/>
+</testsuite>

@@ -70,7 +70,7 @@ public class DBWrapper extends DB
 	public void cleanup() throws DBException
 	{
     long st=System.nanoTime();
-		_db.cleanup();
+    	_db.cleanup();
     long en=System.nanoTime();
     _measurements.measure("CLEANUP", (int)((en-st)/1000));
 	}
