@@ -55,7 +55,7 @@ public class HBaseClient extends com.yahoo.ycsb.DB
     //private static final Configuration config = HBaseConfiguration.create();
     private static final Configuration config = HBaseConfiguration.create(); //new HBaseConfiguration();
 
-    public boolean _debug=true;
+    public boolean _debug=false;
 
     public String _table="";
     public HTable _hTable=null;
@@ -327,7 +327,6 @@ public class HBaseClient extends com.yahoo.ycsb.DB
         try
         {
             _hTable.put(p);
-			System.out.println("after doing put -----");
         }
         catch (IOException e)
         {

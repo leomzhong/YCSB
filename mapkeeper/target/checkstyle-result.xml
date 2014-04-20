@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.0">
-<file name="/Users/yanan/workspace/YCSB+++/YCSB/mapkeeper/src/main/java/com/yahoo/ycsb/db/MapKeeperClient.java">
+<file name="/home/ec2-user/YCSB+++/YCSB/mapkeeper/src/main/java/com/yahoo/ycsb/db/MapKeeperClient.java">
 <error line="0" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 <error line="27" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
 <error line="28" severity="error" message="member def modifier at indentation level 4 not at correct indentation, 2" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
