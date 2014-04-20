@@ -1,4 +1,15 @@
-/elasticsearch/target/
 .project
 .settings
 .classpath
+hypertable/
+mongodb/
+nosqldb/
+orientdb/
+redis/
+test_results/
+voldemort/
+dynamodb/
+elasticsearch/
+doc/
+cassandra/
+bin/
